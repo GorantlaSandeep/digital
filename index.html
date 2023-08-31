@@ -7,6 +7,7 @@
     </head>
     <body onload="initClock()">
         <div Class="datetime">
+            <h1>CLOCK</h1>
             <div class="date">
                 <span id="dayname">Day</span>,
                 <span id="Month">Month</span>
@@ -41,15 +42,15 @@
                     pe = "PM";
                 }
                 Number.prototype.pad=function(digits){
-                    for(var n=this.toString();n.length<digits;n=0+1)
+                    for(var n=this.toString(); n.length < digits; n = 0 + 1)
                     return n;
                 }
                  var months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-                 var week=["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
-                 var ids=["dayname", "Month", "daynum", "year", "hour", "minutes", "Seconds"];
-                 var values=[Week[dname],months[mo],dnum.pad(2),yr.pad(2),hou.pad(2),min.pad(2),sec.pad(2),pe];
-                 for(var i = 0; i < ids,length; i++)
-                 document.getElementById(ids[i]).firstchild.nodevalue=values[i];
+                 var weeks=["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
+                 var ids=["dayname", "Month", "daynum", "year", "hour", "minutes", "Seconds","period"];
+                 var values=[weeks[dname],months[mo],dnum,yr,hou,min,sec,pe];
+                 for(var i=0;i<ids.length; i++)
+                 document.getElementById(ids[i]).firstChild.nodeValue = values[i];
             }
             function initClock(){
                 updateClock();
